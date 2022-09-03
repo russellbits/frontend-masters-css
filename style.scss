@@ -3,7 +3,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   padding: 5vmin;
-  background-color: #f4f4f4;
+  background-color: var(--bodyBgkd);
 }
 
 a {
@@ -32,7 +32,7 @@ ul {
 }
 
 .go {
-  animation: slide-right 1s cubic-bezier(0.5, 0, 0.4, 1);
+  animation: slide-right var(--duration) cubic-bezier(0.5, 0, 0.4, 1);
 }
 
 @keyframes slide-right {
