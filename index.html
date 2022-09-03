@@ -27,7 +27,7 @@
         <li><a href="/06-reactive/">Reactive Animations</a></li>
         <li><a href="/examples/inflight/">Inflight Example</a></li>
       </ul>
-      <!-- This is a silly way to do it-- via IIFE, but it can be done
+      <!-- This is a silly way to do it—via IIFE, but it can be done
       <div class="ball" onclick="(() => { if(!ball[0].classList.contains('go')) { ball[0].classList.add('go') }})()"></div>
       -->
       <div class="ball" onclick="fire()"></div>
@@ -40,9 +40,11 @@
     });
 
     function fire() {
-      if(!ball[0].classList.contains('go')) {
-        ball[0].classList.add('go')
-      }
+      // if(!ball[0].classList.contains('go')) {
+      //   ball[0].classList.add('go')
+      // }
+      // No if statement needed if you use the toggle method.
+      ball[0].classList.toggle('go')
     }
 
     </script>
