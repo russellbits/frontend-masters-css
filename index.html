@@ -27,7 +27,24 @@
         <li><a href="/06-reactive/">Reactive Animations</a></li>
         <li><a href="/examples/inflight/">Inflight Example</a></li>
       </ul>
-      <div class="ball"></div>
+      <!-- This is a silly way to do it-- via IIFE, but it can be done
+      <div class="ball" onclick="(() => { if(!ball[0].classList.contains('go')) { ball[0].classList.add('go') }})()"></div>
+      -->
+      <div class="ball" onclick="fire()"></div>
     </div>
+    <script>
+    const ball = document.getElementsByClassName('ball')
+
+    ball[0].addEventListener('animationend', () => {
+      ball[0].classList.remove("go");
+    });
+
+    function fire() {
+      if(!ball[0].classList.contains('go')) {
+        ball[0].classList.add('go')
+      }
+    }
+
+    </script>
   </body>
 </html>
