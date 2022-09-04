@@ -5,12 +5,12 @@ body {
   color: var(--charcoal);
   padding: 5vmin;
   background-color: var(--sky);
-  animation: sunset 8s linear;
+  animation: sunset-ambiance 6s linear;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
-@keyframes sunset {
+@keyframes sunset-ambiance {
   0% {
     color: var(--charcoal);
     background-color: var(--sky);
@@ -23,7 +23,7 @@ body {
 }
 
 a {
-  color: blue;
+  color: yellow;
 }
 
 h1 {
@@ -40,19 +40,35 @@ ul {
 }
 
 .ball {
-  height: 5vmin;
-  width: 5vmin;
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  height: 15vmin;
+  width: 15vmin;
   border-radius: 50%;
   background: radial-gradient(circle at bottom right, #fb2324, #fe932a);
   background: orange;
   cursor: pointer;
-  transition-property: background, transform;
+  animation: sunset 6s linear 0s 1 normal forwards;
+  /* animation-duration: 6s;
+  animation-iteration-count: 1; */
+
+  /* transition-property: background, transform;
   transition-duration: 3s, 1s;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-in; */
 
   &:hover {
     background: blue; /* Does not appear to accept or transition a second radial-gradient */
     transform: scale(2);
+  }
+}
+
+@keyframes sunset {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateY(50vw);
   }
 }
 
